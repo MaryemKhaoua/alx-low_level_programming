@@ -1,7 +1,6 @@
 #include "main.h"
 /**
- * more_numbers - Entry Function
- * Return: 0 (Success)
+ * more_numbers - print all numbers 0 through 14 ten tiems
  */
 void more_numbers(void)
 {
