@@ -8,7 +8,13 @@ void print_number(int n)
 {
 	unsigned int  c;
 
-	if (n < 0)
+	if (n == -2147483648)
+	{
+		_putchar('-');
+		_putchar('2');
+		print_number(147483648);
+	}
+	else if (n < 0)
 	{
 		n = n * -1;
 		_putchar('-');
