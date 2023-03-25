@@ -6,12 +6,8 @@
  */
 void print_number(int n)
 {
-	char c;
+	unsigned int  c;
 
-	if (n == 32767)
-	{
-		print_number(n);
-	}
 	if (n < 0)
 	{
 		n = n * -1;
