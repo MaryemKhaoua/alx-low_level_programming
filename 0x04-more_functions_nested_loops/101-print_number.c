@@ -8,11 +8,6 @@ void print_number(int n)
 {
 	unsigned int  c;
 
-	if (n == INT_MIN)
-	{
-		print_number(INT_MAX / 10);
-		print_number(8);
-	}
 	if (n < 0)
 	{
 		n = n * -1;
