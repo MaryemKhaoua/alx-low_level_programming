@@ -1,9 +1,17 @@
 #include "main.h"
 /**
  * _puts - Entry Function
- * @str: char
+ * @str: string
  */
 void _puts(char *str)
 {
-	puts(str);
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		_putchar(str[i]);
+		i++;
+	}
+	_putchar('\n');
 }
