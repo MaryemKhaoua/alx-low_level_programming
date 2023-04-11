@@ -4,9 +4,7 @@
  * str_concat - Entry Function
  * @s1: char
  * @s2: char
- * Return: a pointer to a newly allocated space in memory which
- * contains the contents of s1, followed by the contents of s2,
- * and null terminated. NULL on failure
+ * Return: res (SUCCESS)
  */
 char *str_concat(char *s1, char *s2)
 {
@@ -24,6 +22,8 @@ char *str_concat(char *s1, char *s2)
 		len2++;
 	len = len1 + len2;
 	res = malloc(sizeof(char) * (len + 1));
+	if (res == NULL)
+		return (NULL);
 	for (i = 0; s1[i] != '\0'; i++)
 		res[i] = s1[i];
 	for (j = 0; s2[j] != '\0'; j++)
