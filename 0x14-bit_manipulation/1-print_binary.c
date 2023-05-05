@@ -6,39 +6,22 @@
 void print_binary(unsigned long int n)
 {
 	unsigned long int mym = 1;
-	int mol_zraq = 1; /* don't mind this hahaha💙💙*/
+	int mol_zraq = 0; /* don't mind this hahaha💙 💙 */
 
-	if (n == 0)
-	{
-		_putchar('0');
-		return;
-	}
+	while ((mym << 1) <= n)
+		mym <<= 1;
 
-	while (mym <= n)
-	{
-		mym = mym << 1;
-	}
-	mym = mym >> 1;
-
-	while (mym)
+	while (mym != 0)
 	{
 		if (n & mym)
-		{
 			_putchar('1');
-			mol_zraq = 0;
-		}
 		else
-		{
-			if (!mol_zraq)
-			{
-				_putchar('0');
-			}
-		}
-		mym = mym >> 1;
+			_putchar('0');
+
+		mym >>= 1;
+		mol_zraq++;
 	}
 
-	if (mol_zraq)
-	{
+	if (mol_zraq == 0)
 		_putchar('0');
-	}
 }
