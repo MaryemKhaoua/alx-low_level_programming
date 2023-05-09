@@ -17,6 +17,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fptr == NULL)
 		return (0);
 	buff = malloc(sizeof(char) * letters);
+	if (!buff)
+		return (0);
 	nbytes = fread(buff, sizeof(char), letters, fptr);
 	if (nbytes <= 0 || (size_t) fwrite(buff, sizeof(char),
 	nbytes, stdout) != (size_t) nbytes)
