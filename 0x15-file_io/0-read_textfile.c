@@ -9,7 +9,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	FILE *fptr;
 	char *buff;
-	ssize_t nbytes;
+	ssize_t nbytes, nbwrite;
 
 	if (filename == NULL || letters == 0)
 		return (0);
@@ -32,8 +32,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		fclose(fptr);
 		return (0);
 	}
-
-	if ((size_t) fwrite(buff, sizeof(char), nbytes, stdout) != (size_t) nbytes)
+	buff[nbytes] = '\0';
+	nbwrite = write(STDOUT_FILENO, buff, nbytes);
+	if (nbwrite <= 0 || (size_t)nbwrite != (size_t)nbytes)
 	{
 		free(buff);
 		fclose(fptr);
