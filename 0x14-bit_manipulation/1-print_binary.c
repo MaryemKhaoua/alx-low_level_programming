@@ -1,20 +1,20 @@
 #include "main.h"
 /**
- * print_binary - Entry Function
- * @n: unsigned long int
+ * print_binary - Prints the binary representation of a number.
+ * @n: The number to be printed in binary.
  */
 void print_binary(unsigned long int n)
 {
 	unsigned long int mym = 1;
 
 	if (n == 0)
+	{
 		_putchar('0');
+		return;
+	}
 	while (mym <= n)
 		mym <<= 1;
-	if (mym > n)
-	{
-		mym >>= 1;
-	}
+	mym >>= 1;
 	while (mym)
 	{
 		if (n & mym)
