@@ -6,19 +6,12 @@
 void print_binary(unsigned long int n)
 {
 	unsigned long int mym = 1;
-	int i = 0;
 
 	if (n == 0)
-	{
 		_putchar('0');
-		return;
-	}
 	while (mym <= n)
-	{
 		mym <<= 1;
-		i++;
-	}
-	if (i)
+	if (mym > n)
 	{
 		mym >>= 1;
 	}
